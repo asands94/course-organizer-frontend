@@ -1,8 +1,9 @@
 import { useState, useEffect } from 'react'
 import { Routes, Route } from 'react-router-dom'
 import { verify } from './services/auth'
-import Signup from './components/auth/Signup'
-import SignIn from './components/auth/SignIn'
+import Signup from './screens/auth/Signup'
+import SignIn from './screens/auth/SignIn'
+import Home from './screens/Home'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -17,6 +18,7 @@ function App() {
   return (
     <>
       <Routes>
+        <Route path='/' element={<Home user={user} />} />
         <Route
           path='/sign-up'
           element={<Signup user={user} setUser={setUser} />}

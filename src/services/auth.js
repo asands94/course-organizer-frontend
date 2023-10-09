@@ -1,33 +1,24 @@
-import apiUrl from './apiConfig'
-import axios from 'axios'
+import api from './apiConfig'
+import jwtDecode from 'jwt-decode'
 
-export const signUp = (credentials) => {
-  return axios({
-    method: 'POST',
-    url: apiUrl + '/sign-up',
-    data: {
-      username: credentials.username,
-      email: credentials.email,
-      password: credentials.password,
-    },
-  })
+export const signUp = async (credentials) => {
+  const res = await api.post('/sign-up', credentials)
+  localStorage.setItem('token', res.data.token)
+  let user = jwtDecode(res.data.token)
+  return user
 }
 
-export const signIn = (credentials) => {
-  return axios({
-    method: 'POST',
-    url: apiUrl + '/sign-in',
-    data: {
-      username: credentials.username,
-      password: credentials.password,
-    },
-  })
+export const signIn = async (credentials) => {
+  const res = await api.post('/sign-in', credentials)
+  localStorage.setItem('token', res.data.token)
+  let user = jwtDecode(res.data.token)
+  return user
 }
 
 export const verify = () => {
   const token = localStorage.getItem('token')
   if (token) {
-    const res = axios.get('/verify')
+    const res = api.get('/verify')
     return res.data
   } else {
     return false
