@@ -1,4 +1,4 @@
-![Planning]()
+![Planning](images/header.png)
 
 ### Date: October 6, 2023
 
@@ -10,9 +10,9 @@
 
 ### **_Description_**
 
-##### This is the frontend of an application that keeps all the courses you're taking in spot, so you can keep track of the many things you've signed up for.
+##### This is the frontend of an application that keeps all the courses you're taking in one spot, so you can keep track of the many things you've signed up for.
 
-##### The backend repository can be viewed [here]().
+##### The backend repository can be viewed [here](https://github.com/asands94/course-organizer-backend).
 
 ##### The deployed app can be viewed [here]().
 
