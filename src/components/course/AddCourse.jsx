@@ -25,7 +25,7 @@ const AddCourse = ({ setToggle }) => {
   }
 
   return (
-    <div>
+    <div className='course-form'>
       <form onSubmit={handleSubmit}>
         <label>Name</label>
         <br />
@@ -37,6 +37,7 @@ const AddCourse = ({ setToggle }) => {
         />
         <br />
         <label>Url</label>
+        <br />
         <input
           id='url'
           type='text'
@@ -45,6 +46,7 @@ const AddCourse = ({ setToggle }) => {
         />
         <br />
         <label>Image</label>
+        <br />
         <input
           id='image'
           type='text'
@@ -53,6 +55,7 @@ const AddCourse = ({ setToggle }) => {
         />
         <br />
         <label>Description</label>
+        <br />
         <input
           id='description'
           type='text'

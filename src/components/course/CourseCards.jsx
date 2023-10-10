@@ -16,6 +16,7 @@ const CourseCards = ({ course, setToggle }) => {
   }
   return (
     <div className='course-card'>
+      <img src={course.image} className='card-image' />
       {location.pathname === '/' ? (
         <Link to={`/courses/${course._id}`}>
           <h3>{course.name}</h3>

@@ -26,10 +26,10 @@ const CourseUpdate = () => {
 
   const handleChange = (e) => {
     const { id, value } = e.target
-    setCourseData((prevCourseData) => ({
-      ...prevCourseData,
+    setCourseData({
+      ...course,
       [id]: value,
-    }))
+    })
   }
 
   const handleSubmit = async (e) => {
@@ -38,11 +38,11 @@ const CourseUpdate = () => {
     setIsUpdated(updated)
   }
   if (isUpdated) {
-    return navigate('/')
+    return navigate(`/`)
   }
 
   return (
-    <div>
+    <div className='course-form'>
       {' '}
       <form onSubmit={handleSubmit}>
         <label>Name</label>
@@ -56,6 +56,7 @@ const CourseUpdate = () => {
         />
         <br />
         <label>Url</label>
+        <br />
         <input
           id='url'
           type='text'
@@ -65,6 +66,7 @@ const CourseUpdate = () => {
         />
         <br />
         <label>Image</label>
+        <br />
         <input
           id='image'
           type='text'
@@ -73,6 +75,7 @@ const CourseUpdate = () => {
         />
         <br />
         <label>Description</label>
+        <br />
         <input
           id='description'
           type='text'
