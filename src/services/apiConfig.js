@@ -9,7 +9,9 @@ const getToken = () => {
 
 const api = axios.create({
   baseURL:
-    process.env.NODE_ENV === 'production' ? '' : 'http://localhost:8000/api',
+    process.env.NODE_ENV === 'production'
+      ? 'https://ashley-organizer.fly.dev'
+      : 'http://localhost:8000/api',
 })
 
 api.interceptors.request.use(
