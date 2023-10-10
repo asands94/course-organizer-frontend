@@ -5,6 +5,7 @@ import CourseCards from '../components/course/CourseCards'
 
 const CourseShow = () => {
   const [course, setCourse] = useState({})
+  const [toggle, setToggle] = useState(true)
   const { id } = useParams()
 
   useEffect(() => {
@@ -17,7 +18,7 @@ const CourseShow = () => {
 
   return (
     <div>
-      <CourseCards course={course} />
+      <CourseCards setToggle={setToggle} course={course} />
     </div>
   )
 }

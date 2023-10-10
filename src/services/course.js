@@ -14,3 +14,13 @@ export const getCourse = async (id) => {
   const res = await api.get(`/course/${id}`)
   return res.data
 }
+
+export const deleteCourse = async (id) => {
+  const res = await api.delete(`/course/${id}`)
+  return res.data
+}
+
+export const updateCourse = async (id) => {
+  const res = await api.put(`/course/${id}`)
+  return res.data
+}

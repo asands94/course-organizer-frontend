@@ -1,7 +1,8 @@
+/* eslint-disable react/prop-types */
 import { addCourse } from '../../services/course'
 import { useState } from 'react'
 
-const AddCourse = () => {
+const AddCourse = ({ setToggle }) => {
   const [courseData, setCourseData] = useState({
     name: '',
     url: '',
@@ -20,6 +21,7 @@ const AddCourse = () => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     await addCourse(courseData)
+    setToggle((prevToggle) => !prevToggle)
   }
 
   return (

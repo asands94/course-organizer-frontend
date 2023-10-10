@@ -1,8 +1,9 @@
+/* eslint-disable react/prop-types */
 import { getCourses } from '../../services/course'
 import { useState, useEffect } from 'react'
 import CourseCards from './CourseCards'
 
-const CourseIndex = () => {
+const CourseIndex = ({ toggle, setToggle }) => {
   const [courses, setCourses] = useState([])
 
   useEffect(() => {
@@ -11,11 +12,11 @@ const CourseIndex = () => {
       setCourses(courses)
     }
     fetchCourses()
-  }, [])
+  }, [toggle])
 
   const coursesArr = courses.map((course) => (
-    <CourseCards key={course._id} course={course} />
+    <CourseCards key={course._id} course={course} setToggle={setToggle} />
   ))
-  return <div>{coursesArr}</div>
+  return <div className='course-index'>{coursesArr}</div>
 }
 export default CourseIndex
