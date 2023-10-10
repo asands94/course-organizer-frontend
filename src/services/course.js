@@ -20,7 +20,7 @@ export const deleteCourse = async (id) => {
   return res.data
 }
 
-export const updateCourse = async (id) => {
-  const res = await api.put(`/course/${id}`)
+export const updateCourse = async (id, courseData) => {
+  const res = await api.put(`/course/${id}`, courseData)
   return res.data
 }

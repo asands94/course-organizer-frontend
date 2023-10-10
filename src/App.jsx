@@ -5,6 +5,7 @@ import Home from './screens/Home'
 import Layout from './components/layout/Layout'
 import UserCheck from './components/auth/UserCheck'
 import CourseShow from './screens/CourseShow'
+import CourseUpdate from './screens/CourseUpdate'
 import './styles/main.css'
 
 function App() {
@@ -28,6 +29,7 @@ function App() {
             }
           />
           <Route path='/courses/:id' element={<CourseShow />} />
+          <Route path='/courses/:id/edit' element={<CourseUpdate />} />
         </Routes>
       </Layout>
     </>

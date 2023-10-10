@@ -41,6 +41,7 @@ const CourseCards = ({ course, setToggle }) => {
       >
         Delete Course
       </button>
+      <Link to={`/courses/${course._id}/edit`}>Edit</Link>
     </div>
   )
 }
