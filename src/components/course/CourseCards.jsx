@@ -3,6 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 
 const CourseCards = ({ course }) => {
   const location = useLocation()
+  console.log(course.url)
 
   return (
     <div>
@@ -14,7 +15,13 @@ const CourseCards = ({ course }) => {
         <h3>{course.name}</h3>
       )}
 
-      <Link to={course.url}>{course.name}</Link>
+      <a
+        href={course.url.includes('//') ? course.url : `//${course.url}`}
+        target='_blank'
+        rel='noopener noreferrer'
+      >
+        {course.name}
+      </a>
       <p>{course.description}</p>
     </div>
   )
