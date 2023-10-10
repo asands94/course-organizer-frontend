@@ -5,6 +5,7 @@ import Home from './screens/Home'
 import Layout from './components/layout/Layout'
 import UserCheck from './components/auth/UserCheck'
 import CourseShow from './screens/CourseShow'
+import './styles/main.css'
 
 function App() {
   const [user, setUser] = useState(null)
