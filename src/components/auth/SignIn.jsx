@@ -11,7 +11,6 @@ const SignIn = ({ setUser }) => {
   const handleSubmit = async (e) => {
     e.preventDefault()
     const user = await signIn(input)
-    console.log(user)
     setUser(user)
     navigate('/')
   }

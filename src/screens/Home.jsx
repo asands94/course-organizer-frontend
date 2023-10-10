@@ -1,8 +1,13 @@
 /* eslint-disable react/prop-types */
 
-const Home = ({ user }) => {
-  console.log(user)
+import AddCourse from '../components/course/AddCourse'
 
-  return <div>Hello, {user.username}</div>
+const Home = ({ user }) => {
+  return (
+    <div>
+      Hello, {user.username}
+      <AddCourse />
+    </div>
+  )
 }
 export default Home
