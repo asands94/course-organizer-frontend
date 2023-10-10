@@ -1,10 +1,20 @@
 /* eslint-disable react/prop-types */
-// this file will just be for the style of the cards
+import { Link, useLocation } from 'react-router-dom'
+
 const CourseCards = ({ course }) => {
+  const location = useLocation()
+
   return (
     <div>
-      <h3>{course.name}</h3>
-      <p>{course.url}</p>
+      {location.pathname === '/' ? (
+        <Link to={`/courses/${course._id}`}>
+          <h3>{course.name}</h3>
+        </Link>
+      ) : (
+        <h3>{course.name}</h3>
+      )}
+
+      <Link to={course.url}>{course.name}</Link>
       <p>{course.description}</p>
     </div>
   )

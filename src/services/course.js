@@ -9,3 +9,8 @@ export const getCourses = async () => {
   const res = await api.get(`/course`)
   return res.data
 }
+
+export const getCourse = async (id) => {
+  const res = await api.get(`/course/${id}`)
+  return res.data
+}

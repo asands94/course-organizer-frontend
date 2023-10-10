@@ -4,6 +4,7 @@ import { verify } from './services/auth'
 import Home from './screens/Home'
 import Layout from './components/layout/Layout'
 import UserCheck from './components/auth/UserCheck'
+import CourseShow from './screens/CourseShow'
 
 function App() {
   const [user, setUser] = useState(null)
@@ -25,6 +26,7 @@ function App() {
               user ? <Home user={user} /> : <UserCheck setUser={setUser} />
             }
           />
+          <Route path='/courses/:id' element={<CourseShow />} />
         </Routes>
       </Layout>
     </>
