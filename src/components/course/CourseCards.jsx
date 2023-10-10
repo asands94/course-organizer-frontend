@@ -3,8 +3,15 @@ import { Link, useLocation } from 'react-router-dom'
 
 const CourseCards = ({ course }) => {
   const location = useLocation()
-  console.log(course.url)
 
+  if (!course.url) {
+    return (
+      <h1>
+        Can't find the course you're looking for. Go back to{' '}
+        <Link to='/'>all courses</Link>
+      </h1>
+    )
+  }
   return (
     <div>
       {location.pathname === '/' ? (
