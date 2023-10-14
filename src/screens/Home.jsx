@@ -3,6 +3,7 @@ import { useState } from 'react'
 import AddCourse from '../components/courses/AddCourse'
 import CourseIndex from '../components/courses/CourseIndex'
 import AddTag from '../components/tags/AddTag'
+import TagIndex from '../components/tags/TagIndex'
 
 const Home = ({ user }) => {
   const [toggle, setToggle] = useState(true)
@@ -11,6 +12,7 @@ const Home = ({ user }) => {
       Hello, {user.username}
       <AddCourse setToggle={setToggle} />
       <AddTag setToggle={setToggle} />
+      <TagIndex toggle={toggle} />
       <CourseIndex setToggle={setToggle} toggle={toggle} />
     </div>
   )

@@ -8,8 +8,8 @@ const CourseIndex = ({ toggle, setToggle }) => {
 
   useEffect(() => {
     const fetchCourses = async () => {
-      const courses = await getCourses()
-      setCourses(courses)
+      const theCourses = await getCourses()
+      setCourses(theCourses)
     }
     fetchCourses()
   }, [toggle])
