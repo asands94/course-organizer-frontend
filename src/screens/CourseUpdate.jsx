@@ -1,9 +1,16 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { updateCourse, getCourse } from '../services/courses'
+import {
+  updateCourse,
+  getCourse,
+  addTagToCourse,
+  removeTagFromCourse,
+} from '../services/courses'
+import { getTags } from '../services/tags'
 
 const CourseUpdate = () => {
   const [course, setCourse] = useState({})
+  const [tags, setTags] = useState([])
   const [courseData, setCourseData] = useState({
     name: '',
     url: '',
@@ -21,7 +28,12 @@ const CourseUpdate = () => {
       setCourseData(soloCourse)
       setCourse(soloCourse)
     }
+    const fetchTags = async () => {
+      const theTags = await getTags()
+      setTags(theTags)
+    }
     fetchCourse()
+    fetchTags(tags)
   }, [id])
 
   const handleChange = (e) => {
@@ -50,7 +62,6 @@ const CourseUpdate = () => {
         <input
           id='name'
           type='text'
-          // placeholder={course.name}
           value={courseData.name}
           onChange={handleChange}
         />
@@ -60,7 +71,6 @@ const CourseUpdate = () => {
         <input
           id='url'
           type='text'
-          // placeholder={course.url}
           value={courseData.url}
           onChange={handleChange}
         />
@@ -85,6 +95,32 @@ const CourseUpdate = () => {
         <br />
         <button>Submit</button>
       </form>
+      <br />
+      <p>Click to remove a tag</p>
+      {course.tags?.map((tag) => (
+        <button
+          key={tag._id}
+          onClick={async (e) => {
+            e.preventDefault()
+            await removeTagFromCourse(id, tag._id)
+          }}
+        >
+          {tag.name}
+        </button>
+      ))}
+      <br />
+      <p>Click to add a tag</p>
+      {tags.map((tag) => (
+        <button
+          key={tag._id}
+          onClick={async (e) => {
+            e.preventDefault()
+            await addTagToCourse(id, tag._id)
+          }}
+        >
+          {tag.name}
+        </button>
+      ))}
     </div>
   )
 }

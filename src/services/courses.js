@@ -29,3 +29,8 @@ export const addTagToCourse = async (courseId, tagId) => {
   const res = await api.post(`/course/${courseId}/${tagId}`)
   return res.data
 }
+
+export const removeTagFromCourse = async (courseId, tagId) => {
+  const res = await api.delete(`/course/${courseId}/${tagId}`)
+  return res.data
+}
