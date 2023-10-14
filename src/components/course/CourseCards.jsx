@@ -3,7 +3,7 @@
 import { Link, useLocation } from 'react-router-dom'
 import { deleteCourse } from '../../services/course'
 
-const CourseCards = ({ course, setToggle }) => {
+const CourseCards = ({ course, date, setToggle }) => {
   const location = useLocation()
 
   if (!course.url) {
@@ -25,6 +25,15 @@ const CourseCards = ({ course, setToggle }) => {
         <h3>{course.name}</h3>
       )}
       <p>{course.description}</p>
+      <p>
+        Date added:{' '}
+        {date.toLocaleDateString('en-us', {
+          weekday: 'long',
+          year: 'numeric',
+          month: 'short',
+          day: 'numeric',
+        })}
+      </p>
       <button>
         <a
           href={course.url.includes('//') ? course.url : `//${course.url}`}
