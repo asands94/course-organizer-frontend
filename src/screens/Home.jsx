@@ -2,8 +2,8 @@
 import { useState } from 'react'
 import AddCourse from '../components/courses/AddCourse'
 import CourseIndex from '../components/courses/CourseIndex'
-import AddTag from '../components/tags/AddTag'
-import TagIndex from '../components/tags/TagIndex'
+import AddTag from '../components/tagsComponents/AddTag'
+import TagIndex from '../components/tagsComponents/TagIndex'
 
 const Home = ({ user }) => {
   const [toggle, setToggle] = useState(true)

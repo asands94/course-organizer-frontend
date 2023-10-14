@@ -24,3 +24,8 @@ export const updateCourse = async (id, courseData) => {
   const res = await api.put(`/course/${id}`, courseData)
   return res.data
 }
+
+export const addTagToCourse = async (courseId, tagId) => {
+  const res = await api.post(`/course/${courseId}/${tagId}`)
+  return res.data
+}

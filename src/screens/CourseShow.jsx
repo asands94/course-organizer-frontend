@@ -15,10 +15,10 @@ const CourseShow = () => {
     }
     fetchCourse()
   }, [id])
-
+  const date = new Date(course.createdAt)
   return (
     <div>
-      <CourseCards setToggle={setToggle} course={course} />
+      <CourseCards date={date} setToggle={setToggle} course={course} />
     </div>
   )
 }
