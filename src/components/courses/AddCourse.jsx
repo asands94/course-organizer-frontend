@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { addCourse } from '../../services/course'
+import { addCourse } from '../../services/courses'
 import { useState } from 'react'
 
 const AddCourse = ({ setToggle }) => {
@@ -27,7 +27,7 @@ const AddCourse = ({ setToggle }) => {
   return (
     <div className='course-form'>
       <form onSubmit={handleSubmit}>
-        <label>Name</label>
+        <label>Course Name</label>
         <br />
         <input
           id='name'

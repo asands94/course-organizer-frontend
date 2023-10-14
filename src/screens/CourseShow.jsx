@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
-import { getCourse } from '../services/course'
+import { getCourse } from '../services/courses'
 import CourseCards from '../components/course/CourseCards'
 
 const CourseShow = () => {

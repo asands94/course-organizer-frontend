@@ -1,6 +1,6 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import { updateCourse, getCourse } from '../services/course'
+import { updateCourse, getCourse } from '../services/courses'
 
 const CourseUpdate = () => {
   const [course, setCourse] = useState({})

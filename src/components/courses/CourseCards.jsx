@@ -1,7 +1,7 @@
 /* eslint-disable react/no-unescaped-entities */
 /* eslint-disable react/prop-types */
 import { Link, useLocation } from 'react-router-dom'
-import { deleteCourse } from '../../services/course'
+import { deleteCourse } from '../../services/courses'
 
 const CourseCards = ({ course, date, setToggle }) => {
   const location = useLocation()

@@ -1,5 +1,5 @@
 /* eslint-disable react/prop-types */
-import { getCourses } from '../../services/course'
+import { getCourses } from '../../services/courses'
 import { useState, useEffect } from 'react'
 import CourseCards from './CourseCards'
 
