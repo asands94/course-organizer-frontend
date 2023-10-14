@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { getCourses } from '../../services/courses'
 import { useState, useEffect } from 'react'
-import CourseCards from './CourseCards'
+import CourseCards from '../shared/CourseCards'
 
 const CourseIndex = ({ toggle, setToggle }) => {
   const [courses, setCourses] = useState([])

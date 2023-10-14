@@ -2,7 +2,7 @@
 import { useState } from 'react'
 import AddCourse from '../components/courses/AddCourse'
 import CourseIndex from '../components/courses/CourseIndex'
-import AddTag from '../components/tagsComponents/AddTag'
+import AddTag from '../components/shared/AddTag'
 import TagIndex from '../components/tagsComponents/TagIndex'
 
 const Home = ({ user }) => {

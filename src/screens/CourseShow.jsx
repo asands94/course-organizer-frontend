@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { getCourse } from '../services/courses'
-import CourseCards from '../components/courses/CourseCards'
+import CourseCards from '../components/shared/CourseCards'
 
 const CourseShow = () => {
   const [course, setCourse] = useState({})

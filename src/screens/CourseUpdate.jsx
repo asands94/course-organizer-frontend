@@ -1,12 +1,9 @@
 import { useParams, useNavigate } from 'react-router-dom'
 import { useEffect, useState } from 'react'
-import {
-  updateCourse,
-  getCourse,
-  addTagToCourse,
-  removeTagFromCourse,
-} from '../services/courses'
+import { updateCourse, getCourse } from '../services/courses'
 import { getTags } from '../services/tags'
+import AddTagToCourse from '../components/shared/AddTagToCourse'
+import RemoveTagFromCourse from '../components/shared/RemoveTagFromCourse'
 
 const CourseUpdate = () => {
   const [course, setCourse] = useState({})
@@ -34,7 +31,7 @@ const CourseUpdate = () => {
     }
     fetchCourse()
     fetchTags(tags)
-  }, [id])
+  }, [id, tags])
 
   const handleChange = (e) => {
     const { id, value } = e.target
@@ -96,31 +93,9 @@ const CourseUpdate = () => {
         <button>Submit</button>
       </form>
       <br />
-      <p>Click to remove a tag</p>
-      {course.tags?.map((tag) => (
-        <button
-          key={tag._id}
-          onClick={async (e) => {
-            e.preventDefault()
-            await removeTagFromCourse(id, tag._id)
-          }}
-        >
-          {tag.name}
-        </button>
-      ))}
+      <RemoveTagFromCourse course={course} id={id} />
       <br />
-      <p>Click to add a tag</p>
-      {tags.map((tag) => (
-        <button
-          key={tag._id}
-          onClick={async (e) => {
-            e.preventDefault()
-            await addTagToCourse(id, tag._id)
-          }}
-        >
-          {tag.name}
-        </button>
-      ))}
+      <AddTagToCourse tags={tags} course={course} id={id} />
     </div>
   )
 }
